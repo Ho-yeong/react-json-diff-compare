@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import JsonCompareViewer from "./components";
+
+
+const oldCode = {
+  number : 1,
+  string: "this is cool",
+  array: ["what", "the", "fuck"],
+  numArray : [ 1004, 369, 2478,1234 ],
+  object2 : {
+    inside: 1,
+    inside2: "2"
+  }
+}
+
+const newCode = {
+  number : 5,
+  string: "this is not cool",
+  array: ["the", "fuck", "what"],
+  numArray : [ 1004, 369, 2478,1234 ],
+  object2 : {
+    inside: 1,
+    inside2: "2"
+  }
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <JsonCompareViewer oldObject={oldCode} newObject={newCode} />
     </div>
   );
 }
